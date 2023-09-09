@@ -4,6 +4,7 @@
   --divider-color: #e4e9f2;
   --text-color: #69707d;
   --heading-color: #1d2026;
+  --font: "Kumbh Sans", "Arial", sans-serif;
 }
 
 /* FONT-FACE */
@@ -41,6 +42,11 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #fff;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text-color);
 }
 
 .container {
