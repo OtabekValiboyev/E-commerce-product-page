@@ -65,6 +65,10 @@ body {
 
 /* SITE-HEADER */
 .header {
+  background-color: #fff;
+}
+
+.header__container {
   position: relative;
   display: flex;
   align-items: center;
