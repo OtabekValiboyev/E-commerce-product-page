@@ -34,7 +34,7 @@
       </nav>
 
       <div class="header__cart">
-        <a class="header__cart-link" href="#" aria-label="shopping cart icon">
+        <a class="header__cart-link js-header__cart-link" href="#" aria-label="shopping cart icon">
           <span class="header__cart-count">3</span>
           <svg class="header__cart-icon" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
             <path fill="#F2F2F2" d="M0 0h22v20H0z" />
@@ -45,30 +45,31 @@
           </svg>
         </a>
 
-        <div class="header__modal">
-          <section class="shopping-card shopping-card--modal">
-            <!-- shopping-card-modal -->
-            <!-- shopping-card-empty -->
-            <header class="shoping-card__header">
-              <h2 class="shopping-card__heading">Cart</h2>
+        <div class="header__modal header__modal--open">
+          <section class="shopping-cart shopping-cart--modal">
+            <!-- shopping-cart-modal -->
+            <!-- shopping-cart-empty -->
+            <header class="shoping-cart__header">
+              <h2 class="shopping-cart__heading">Cart</h2>
             </header>
-            <div class="shopping-card__inner">
+            <div class="shopping-cart__inner">
               <!-- Empty -->
-              <div class="shopping-card__empty">Your cart is empty.</div>
+              <div class="shopping-cart__empty">Your cart is empty.</div>
 
 
               <!-- Has items -->
-              <div class="shopping-card__content">
-                <ul class="shopping-card-products">
-                  <li class="shopping-card-products__item item-shopping-card-products">
-                    <img class="item-shopping-card-products__img" src="img/shopping-card-item-img.jpg"
+              <div class="shopping-cart__content">
+                <ul class="shopping-cart__product shopping-cart-products">
+                  <li class="shopping-cart-products__item item-shopping-cart-products">
+                    <img class="item-shopping-cart-products__img" src="img/shopping-card-item-img.jpg"
                       alt="Fall Limited Edition Sneakers" width="50" height="50"
                       srcset="img/shopping-card-item-img.jpg 1x, img/shopping-card-item-img@2x.jpg 2x">
-                    <div class="item-shopping-card-products__info">
-                      <p class="item-shopping-card-products__name">Fall Limited Edition Sneakers Lorem ipsum dolor sit amet.</p>
-                      <div class="item-shopping-card-products__cost">$125.00 x 3 <b>$375.00</b></div>
+                    <div class="item-shopping-cart-products__info">
+                      <span class="item-shopping-cart-products__name">Fall Limited Edition Sneakers Lorem ipsum dolor
+                        sit amet.</span>
+                      <div class="item-shopping-cart-products__cost">$125.00 x 3 <b>$375.00</b></div>
                     </div>
-                    <button class="item-shopping-card-products__checkout-button" type="button">
+                    <button class="item-shopping-cart-products__checkout-button" type="button">
                       <svg width="14" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                           d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4 6c.275 0 .5.225.5.5v7c0 .275-.225.5-.5.5a.501.501 0 0 1-.5-.5v-7c0-.275.225-.5.5-.5Zm3.5.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7ZM10 6c.275 0 .5.225.5.5v7c0 .275-.225.5-.5.5a.501.501 0 0 1-.5-.5v-7c0-.275.225-.5.5-.5Z"
@@ -83,6 +84,11 @@
                     </button>
                   </li>
                 </ul>
+                <a class="button button--block" href="#">
+                  <span class="button__inner">
+                    <span class="button__text">Checkout</span>
+                  </span>
+                </a>
               </div>
             </div>
           </section>
