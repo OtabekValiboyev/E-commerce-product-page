@@ -54,3 +54,38 @@ if (elLightboxClose) {
     elLightbox.classList.remove(modifiers.LightboxOpen);
   });
 };
+
+const elImgLightboxActiveImg = elLightbox.querySelector('.img-showcase__active-img');
+const elsImgLightboxThumbnailButtons = elLightbox.querySelectorAll('.js-lightbox-img-showcase-thumbnail-button');
+const elsImgLightboxThumbnail = elLightbox.querySelectorAll('.js-img-showcase-thumbnail');
+
+
+elsImgLightboxThumbnailButtons.forEach(function (elImgButton) {
+  elImgButton.addEventListener('click', function () {
+
+    elsImgLightboxThumbnail.forEach(function (elImgThumbnail) {
+      elImgThumbnail.classList.remove(modifiers.ImgThumbnailActive);
+    });
+
+    elImgButton.parentElement.classList.add(modifiers.ImgThumbnailActive);
+
+    elImgLightboxActiveImg.src = elImgButton.dataset.imgShowcaseBig;
+    elImgLightboxActiveImg.srcset = `${elImgButton.dataset.imgShowcaseBig} 1x, ${elImgButton.dataset.imgShowcaseRetina} 2x`;
+
+
+  });
+});
+
+// LIGHTBOX CONTROLLER
+const elLightboxControlPrev = elLightbox.querySelector('.js-img-control-prev');
+const elLightboxControlNext = elLightbox.querySelector('.js-img-control-next');
+
+if (elLightboxControlNext) {
+  elLightboxControlNext.addEventListener('click', function () {
+
+    const elLightboxActive = elLightbox.querySelector('.js-img-showcase-thumbnail--active');
+
+    elLightboxActive.classList.remove(modifiers.ImgThumbnailActive)
+
+  });
+};
