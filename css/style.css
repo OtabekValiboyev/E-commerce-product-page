@@ -51,9 +51,9 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1160px;
-  padding-left: 25px;
-  padding-right: 25px;
+  max-width: 1148px;
+  padding-left: 24px;
+  padding-right: 24px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -61,6 +61,81 @@ body {
 .main-content {
   flex-grow: 1;
 }
+
+/* .IMG-SHOWCASE */
+.img-showcase__showcase {
+  margin-bottom: 32px;
+}
+
+.img-showcase__active-img {
+  display: block;
+  width: 445px;
+  height: 445px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.img-showcase__thumbnails {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: auto;
+}
+
+.img-showcase__thumbnail {
+  flex-shrink: 0;
+}
+
+.img-showcase__thumbnail:not(:last-child) {
+  margin-right: 31px;
+}
+
+.img-showcase__thumbnail-button {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.img-showcase__thumbnail-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.50);
+  opacity: 0;
+}
+
+.img-showcase__thumbnail-button:hover::after {
+  opacity: 1;
+}
+
+
+.img-showcase__thumbnail-button:active {
+  opacity: 0.6;
+}
+
+.img-showcase__thumbnail--active .img-showcase__thumbnail-button::after {
+  opacity: 1;
+  border: 2px solid var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.img-showcase__thumbnail-img {
+  display: block;
+  width: 88px;
+  height: 88px;
+  border-right: 10px;
+  object-fit: cover;
+}
+
 
 
 /* SITE-HEADER */
@@ -72,7 +147,6 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #fff;
   border-bottom: 1px solid var(--divider-color);
 }
 
@@ -169,7 +243,7 @@ body {
   padding: 22px 20px 18px;
 }
 
-/* CARt */
+/* CART */
 .header__modal {
   display: none;
 }
@@ -356,4 +430,26 @@ body {
 
 .item-shopping-cart-products__checkout-button:active {
   opacity: 0.6;
+}
+
+.poduct-page {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.product-page__container {
+  max-width: 1063px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-page__gallery {
+  width: 100%;
+  max-width: 445px;
+  margin-right: 48px;
+}
+
+.product-page__info {
+  width: 100%;
+  max-width: 445px;
 }
