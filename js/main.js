@@ -1,4 +1,6 @@
 const modifiers = {
+  LightboxOpen: 'lightbox--open',
+  HeaderModalOpen: 'header__modal--open',
   ImgThumbnailActive: 'img-showcase__thumbnail--active'
 };
 
@@ -8,7 +10,7 @@ const elHeaderModal = document.querySelector('.header__modal');
 
 if (elHeaderCardLink) {
   elHeaderCardLink.addEventListener('click', function () {
-    elHeaderModal.classList.toggle('header__modal--open')
+    elHeaderModal.classList.toggle(modifiers.HeaderModalOpen)
   });
 };
 
@@ -34,3 +36,21 @@ elsImgShowcaseThumbnailButtons.forEach(function (elImgButton) {
     // console.log(elImgButton.dataset.imgShowcaseRetina);
   });
 });
+
+
+// LIGHTBOX
+const elLightboxButton = document.querySelector('.js-lightbox-toggler');
+const elLightbox = document.querySelector('.lightbox');
+const elLightboxClose = document.querySelector('.js-lightbox-close');
+
+if (elLightboxButton) {
+  elLightboxButton.addEventListener('click', function () {
+    elLightbox.classList.add(modifiers.LightboxOpen);
+  });
+};
+
+if (elLightboxClose) {
+  elLightboxClose.addEventListener('click', function () {
+    elLightbox.classList.remove(modifiers.LightboxOpen);
+  });
+};
