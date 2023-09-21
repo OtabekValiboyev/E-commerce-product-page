@@ -15,9 +15,10 @@ if (elHeaderCardLink) {
 };
 
 // SITE SHOWCASE
-const elImgShowcaseActiveImg = document.querySelector('.img-showcase__active-img');
-const elsImgShowcaseThumbnailButtons = document.querySelectorAll('.js-img-showcase-thumbnail-button');
-const elsImgShowcaseThumbnail = document.querySelectorAll('.js-img-showcase-thumbnail');
+const elProductPageGallery = document.querySelector('.product-page__gallery');
+const elImgShowcaseActiveImg = elProductPageGallery.querySelector('.img-showcase__active-img');
+const elsImgShowcaseThumbnailButtons = elProductPageGallery.querySelectorAll('.js-img-showcase-thumbnail-button');
+const elsImgShowcaseThumbnail = elProductPageGallery.querySelectorAll('.img-showcase__thumbnail');
 
 
 elsImgShowcaseThumbnailButtons.forEach(function (elImgButton) {
@@ -57,9 +58,10 @@ if (elLightboxClose) {
 
 const elImgLightboxActiveImg = elLightbox.querySelector('.img-showcase__active-img');
 const elsImgLightboxThumbnailButtons = elLightbox.querySelectorAll('.js-lightbox-img-showcase-thumbnail-button');
-const elsImgLightboxThumbnail = elLightbox.querySelectorAll('.js-img-showcase-thumbnail');
+const elsImgLightboxThumbnail = elLightbox.querySelectorAll('.img-showcase__thumbnail');
 
 
+// THUMBNAIL CLICK
 elsImgLightboxThumbnailButtons.forEach(function (elImgButton) {
   elImgButton.addEventListener('click', function () {
 
@@ -72,7 +74,6 @@ elsImgLightboxThumbnailButtons.forEach(function (elImgButton) {
     elImgLightboxActiveImg.src = elImgButton.dataset.imgShowcaseBig;
     elImgLightboxActiveImg.srcset = `${elImgButton.dataset.imgShowcaseBig} 1x, ${elImgButton.dataset.imgShowcaseRetina} 2x`;
 
-
   });
 });
 
@@ -83,9 +84,43 @@ const elLightboxControlNext = elLightbox.querySelector('.js-img-control-next');
 if (elLightboxControlNext) {
   elLightboxControlNext.addEventListener('click', function () {
 
-    const elLightboxActive = elLightbox.querySelector('.js-img-showcase-thumbnail--active');
+    const elActiveItem = elLightbox.querySelector('.img-showcase__thumbnail--active');
+    elActiveItem.classList.remove(modifiers.ImgThumbnailActive);
 
-    elLightboxActive.classList.remove(modifiers.ImgThumbnailActive)
+    let elNextActiveItem;
 
+    if (elActiveItem.nextElementSibling === null) {
+      elNextActiveItem = elsImgLightboxThumbnail[0];
+    } else {
+      elNextActiveItem = elActiveItem.nextElementSibling;
+    }
+    elNextActiveItem.classList.add(modifiers.ImgThumbnailActive)
+    // elActiveItem.nextElementSibling.classList.add(modifiers.ImgThumbnailActive);
+    // elsImgLightboxThumbnail[0].classList.add(modifiers.ImgThumbnailActive);
+
+    elImgLightboxActiveImg.src = elNextActiveItem.children[0].dataset.imgShowcaseBig;
+    elImgLightboxActiveImg.srcset = `${elNextActiveItem.children[0].dataset.imgShowcaseBig} 1x, ${elNextActiveItem.children[0].dataset.imgShowcaseRetina} 2x`;
+  });
+};
+
+if (elLightboxControlPrev) {
+  elLightboxControlPrev.addEventListener('click', function () {
+
+    const elActiveItem = elLightbox.querySelector('.img-showcase__thumbnail--active');
+    elActiveItem.classList.remove(modifiers.ImgThumbnailActive);
+
+    let elPrevActiveItem;
+
+    if (elActiveItem.previousElementSibling === null) {
+      elPrevActiveItem = elsImgLightboxThumbnail[elsImgLightboxThumbnail.length -1];
+    } else {
+      elPrevActiveItem = elActiveItem.previousElementSibling;
+    }
+    elPrevActiveItem.classList.add(modifiers.ImgThumbnailActive)
+    // elActiveItem.nextElementSibling.classList.add(modifiers.ImgThumbnailActive);
+    // elsImgLightboxThumbnail[0].classList.add(modifiers.ImgThumbnailActive);
+
+    elImgLightboxActiveImg.src = elPrevActiveItem.children[0].dataset.imgShowcaseBig;
+    elImgLightboxActiveImg.srcset = `${elPrevActiveItem.children[0].dataset.imgShowcaseBig} 1x, ${elPrevActiveItem.children[0].dataset.imgShowcaseRetina} 2x`;
   });
 };
