@@ -124,3 +124,28 @@ if (elLightboxControlPrev) {
     elImgLightboxActiveImg.srcset = `${elPrevActiveItem.children[0].dataset.imgShowcaseBig} 1x, ${elPrevActiveItem.children[0].dataset.imgShowcaseRetina} 2x`;
   });
 };
+
+
+// PAGE INFO CONTROL
+const elProductInfoQtyDecrementButton = document.querySelector(".js-product-info-quantity-decrement-button");
+const elProductInfoQtyIncrementButton = document.querySelector(".js-product-info-quantity-increment-button");
+const elProductInfoQty = document.querySelector('.product-info__quantity');
+
+if (elProductInfoQtyIncrementButton) {
+  elProductInfoQtyIncrementButton.addEventListener('click', function () {
+
+    elProductInfoQty.textContent = parseInt(elProductInfoQty.textContent, 10) + 1;
+  });
+};
+
+if (elProductInfoQtyDecrementButton) {
+  elProductInfoQtyDecrementButton.addEventListener('click', function () {
+
+    const qty = parseInt(elProductInfoQty.textContent, 10);
+
+    if (qty > 0) {
+      elProductInfoQty.textContent = qty - 1;
+    };
+
+  });
+};
