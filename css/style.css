@@ -104,6 +104,10 @@ body {
   padding: 22px 20px 18px;
 }
 
+.button__prepend {
+  margin-right: 16px;
+}
+
 /* .IMG-SHOWCASE */
 .img-showcase__showcase {
   position: relative;
