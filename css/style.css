@@ -94,7 +94,7 @@ body {
 }
 
 .button--wide {
-  min-height: 272px;
+  min-width: 272px;
 }
 
 .button__inner {
@@ -107,6 +107,19 @@ body {
 .button__prepend {
   margin-right: 16px;
 }
+
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  padding: 5px 8px 4px;
+  border-radius: 6px;
+  font-weight: bold;
+  line-height: normal;
+  color: var(--accent-color);
+  background: #ffeee2;
+}
+
 
 /* .IMG-SHOWCASE */
 .img-showcase__showcase {
@@ -549,6 +562,8 @@ body {
   opacity: 0.6;
 }
 
+
+/* PODUCT-PAGE */
 .poduct-page {
   padding-top: 90px;
   padding-bottom: 90px;
@@ -570,3 +585,111 @@ body {
   width: 100%;
   max-width: 445px;
 }
+
+
+/* PRODUCT-PAGE-INFO */
+.product-info {
+  width: 100%;
+  max-width: 445px;
+  padding-top: 60px;
+}
+
+.product-info__manufacturer {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+}
+
+.product-info__title {
+  margin: 0;
+  margin-bottom: 32px;
+  color: var(--heading-color);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.product-info__description {
+  margin: 0;
+  margin-bottom: 28px;
+  color: var(--text-color);
+}
+
+.product-info__price-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-info__old-price {
+  display: block;
+  color: #b6bcc8;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.product-info__price {
+  margin-right: 16px;
+  font-size: 28px;
+  line-height: normal;
+  font-weight: bold;
+  color: var(--heading-color);
+}
+
+.product-info__cart-action {
+  display: flex;
+}
+
+.product-info__quantity-wrapper {
+  display: flex;
+  width: 156px;
+  margin-right: 16px;
+  background-color: #f6f8fd;
+  border-radius: 10px;
+}
+
+.product-info__quantity-button {
+  width: 52px;
+  border: 0;
+  padding: 0;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--accent-color);
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.product-info__quantity-button:hover {
+  color: #ffab6a;
+}
+
+.product-info__quantity-button:active {
+  background-color: #ffab6a;
+  color: #fff;
+}
+
+.product-info__quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.button {}
+
+.button--wide {}
+
+.button__inner {}
+
+.button__prepend {}
+
+.button__icon {}
+
+.button__text {}
